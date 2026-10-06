@@ -2,9 +2,15 @@
 
 
 <nav>
-  <a routerLink="/">Startsida</a>
-  <a routerLink="/courses">Kurser</a>
-  <a routerLink="/timetable">Ramschema</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Startsida
+  </a>
+  <a routerLink="/courses" routerLinkActive="active">
+    Kurser
+  </a>
+  <a routerLink="/timetable" routerLinkActive="active">
+    Ramschema
+  </a>
 </nav>
 
 

@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0 auto;
+}
+
+app-root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+/*Navigering*/
+nav {
+    width: 100%;
+    background-color: #810606;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin-right: 75px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    color: rgb(194, 194, 194);
+}
+
+nav a.active {
+text-decoration: underline;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #810606;
+    padding: 3px;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+}
+
+/*Media query för mindre skärmar*/
+@media (max-width: 800px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav {
+        padding: 10px;
+    }
+}
