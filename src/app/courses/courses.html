@@ -1,5 +1,10 @@
 <h2>Kurser</h2>
 
-@for (course of courses(); track course.courseCode) {
-<p>{{ course.courseCode }} - {{ course.courseName }}</p>
+<label for="search">Sök efter kurs:</label>
+<br>
+<input type="text" id="search" placeholder="Sök efter kurs..." (input)="searchTerm.set($any($event.target).value)">
+
+@for (course of filteredCourses(); track course.courseCode) {
+<p>{{ course.courseCode }} - {{ course.courseName }} - {{ course.points }} - {{ course.subjectCode }} - <a
+        [href]="course.syllabus">Kursplan</a></p>
 }

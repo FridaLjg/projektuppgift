@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { CourseService } from '../services/courses';
 import { Course } from '../models/course';
 
@@ -12,6 +12,15 @@ import { Course } from '../models/course';
 export class Courses {
 
   courses = signal<Course[]>([]);
+  searchTerm = signal('');
+
+  filteredCourses = computed(() => {
+    const search = this.searchTerm().toLowerCase();
+
+    return this.courses().filter(course =>
+      course.courseName.toLowerCase().includes(search)
+    );
+  });
 
   constructor(private courseService: CourseService) { }
 
