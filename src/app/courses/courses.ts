@@ -24,7 +24,7 @@ export class Courses {
   });
 
   constructor(private courseService: CourseService,
-    private timetableService: TimetableService
+    public timetableService: TimetableService
   ) { }
 
   ngOnInit(): void {

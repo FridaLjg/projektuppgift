@@ -21,7 +21,6 @@ export class TimetableService {
 
   addCourse(course: Course): void {
 
-    //Kurser kan inte läggas till dubbelt
     const exists = this.courses().some(
       c => c.courseCode === course.courseCode
     );
@@ -29,11 +28,13 @@ export class TimetableService {
     if (!exists) {
       this.courses.update(courses => [...courses, course]);
 
-      //Spara till localStorage
+      // Spara till localStorage
       localStorage.setItem(
         'timetable',
         JSON.stringify(this.courses())
       );
+    } else {
+      alert('Kursen finns redan i ramschemat!');
     }
   }
 
