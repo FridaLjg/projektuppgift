@@ -7,3 +7,33 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/*Tabell*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #810606;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #e7e5e5;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

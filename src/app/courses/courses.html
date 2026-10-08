@@ -1,8 +1,10 @@
-<h2>Kurser</h2>
+<div class="center-container">
+    <h2>Kurser</h2>
 
-<label for="search">Sök efter kurs:</label>
-<br>
-<input type="text" id="search" placeholder="Sök efter kurs..." (input)="searchTerm.set($any($event.target).value)">
+    <label for="search">Sök efter kurs:</label>
+
+    <input type="text" id="search" placeholder="Sök efter kurs..." (input)="searchTerm.set($any($event.target).value)">
+</div>
 
 <table>
     <thead>
