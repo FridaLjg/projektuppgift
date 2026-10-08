@@ -4,7 +4,7 @@ import { Course } from '../models/course';
 @Injectable({
   providedIn: 'root',
 })
-export class Timetable {
+export class TimetableService {
   courses = signal<Course[]>([]);
 
   addCourse(course: Course): void {
