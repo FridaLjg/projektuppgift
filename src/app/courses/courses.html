@@ -22,24 +22,24 @@
     </div>
 
     <p class="course-count">
-       Listar {{ filteredCourses().length }} av totalt {{ courses().length }}
+        Listar {{ filteredCourses().length }} av totalt {{ courses().length }}
     </p>
 </div>
 
 <table>
     <thead>
         <tr>
-            <th>Kurskod</th>
-            <th>Kursnamn</th>
-            <th>Poäng</th>
-            <th>Ämne</th>
+            <th (click)="sortCourses('courseCode')">Kurskod</th>
+            <th (click)="sortCourses('courseName')">Kursnamn</th>
+            <th (click)="sortCourses('points')">Poäng</th>
+            <th (click)="sortCourses('subject')">Ämne</th>
             <th>Kursplan</th>
             <th>Lägg till</th>
         </tr>
     </thead>
 
     <tbody>
-        @for (course of filteredCourses(); track course.courseCode) {
+        @for (course of filteredCourses(); track $index) {
         <tr>
             <td>{{ course.courseCode }}</td>
             <td>{{ course.courseName }}</td>

@@ -48,6 +48,7 @@ td {
 th {
     background-color: #810606;
     color: white;
+    cursor: pointer;
 }
 
 tbody tr:hover {
