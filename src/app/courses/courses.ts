@@ -14,12 +14,19 @@ export class Courses {
 
   courses = signal<Course[]>([]);
   searchTerm = signal('');
+  selectSubject = signal('');
+
+  subjects = computed(() => {
+    return [...new Set(this.courses().map(course => course.subject))];
+  });
 
   filteredCourses = computed(() => {
     const search = this.searchTerm().toLowerCase();
+    const subject = this.selectSubject();
 
     return this.courses().filter(course =>
-      course.courseName.toLowerCase().includes(search)
+      course.courseName.toLowerCase().includes(search) &&
+      (subject === '' || course.subject === subject)
     );
   });
 

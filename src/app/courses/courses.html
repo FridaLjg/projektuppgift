@@ -1,9 +1,25 @@
 <div class="center-container">
     <h2>Kurser</h2>
 
-    <label for="search">Sök efter kurs:</label>
+    <div class="filter-container">
 
-    <input type="text" id="search" placeholder="Sök efter kurs..." (input)="searchTerm.set($any($event.target).value)">
+        <!--Sökruta-->
+        <label for="search">Sök efter kurs:</label>
+
+        <input type="text" id="search" placeholder="Sök efter kurs..."
+            (input)="searchTerm.set($any($event.target).value)">
+
+        <!--Filtrera efter ämne-->
+        <label for="subject">Välj ämne:</label>
+
+        <select id="subject" (change)="selectSubject.set($any($event.target).value)">
+            <option value="">Alla ämnen</option>
+
+            @for (subject of subjects(); track subject) {
+            <option [value]="subject">{{ subject }}</option>
+            }
+        </select>
+    </div>
 </div>
 
 <table>
