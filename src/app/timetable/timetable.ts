@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimetableService } from '../services/timetable';
 
 @Component({
   selector: 'app-timetable',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './timetable.html',
   styleUrl: './timetable.css',
 })
-export class Timetable {}
+export class Timetable {
+  constructor(public timetableService: TimetableService) {}
+}

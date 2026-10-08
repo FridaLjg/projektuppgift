@@ -10,4 +10,10 @@ export class TimetableService {
   addCourse(course: Course): void {
     this.courses.update(courses => [...courses, course]);
   }
+
+  removeCourse(courseCode: string): void {
+    this.courses.update(courses =>
+      courses.filter(course => course.courseCode !== courseCode)
+    );
+  }
 }

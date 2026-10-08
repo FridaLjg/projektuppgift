@@ -1,1 +1,34 @@
-<p>timetable works!</p>
+<h1>Mitt ramschema</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Kurskod</th>
+            <th>Kursnamn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+            <th>Ta bort</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (course of timetableService.courses(); track course.courseCode) {
+        <tr>
+            <td>{{ course.courseCode }}</td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.points }} hp</td>
+            <td>{{ course.subject }}</td>
+
+            <td>
+                <a [href]="course.syllabus" target="_blank" rel="noopener noreferrer">
+                    Kursplan
+                </a>
+            </td>
+            <button type="button" (click)="timetableService.removeCourse(course.courseCode)">
+                Ta bort
+            </button>
+        </tr>
+        }
+    </tbody>
+</table>
