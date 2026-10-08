@@ -25,7 +25,10 @@ export class Courses {
     const subject = this.selectSubject();
 
     return this.courses().filter(course =>
-      course.courseName.toLowerCase().includes(search) &&
+      (
+        course.courseName.toLowerCase().includes(search) ||
+        course.courseCode.toLowerCase().includes(search)
+      ) &&
       (subject === '' || course.subject === subject)
     );
   });
@@ -44,4 +47,5 @@ export class Courses {
   addToTimetable(course: Course): void {
     this.timetableService.addCourse(course);
   }
+
 }

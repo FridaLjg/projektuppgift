@@ -4,13 +4,13 @@
     <div class="filter-container">
 
         <!--Sökruta-->
-        <label for="search">Sök efter kurs:</label>
+        <label for="search" class="bold">Sök efter kurs:</label>
 
         <input type="text" id="search" placeholder="Sök efter kurs..."
             (input)="searchTerm.set($any($event.target).value)">
 
         <!--Filtrera efter ämne-->
-        <label for="subject">Välj ämne:</label>
+        <label for="subject" class="bold">Välj ämne:</label>
 
         <select id="subject" (change)="selectSubject.set($any($event.target).value)">
             <option value="">Alla ämnen</option>
@@ -51,7 +51,7 @@
                 </a>
             </td>
             <td>
-                <button type="button" (click)="addToTimetable(course)">
+                <button type="button" class="add-button" (click)="addToTimetable(course)">
                     Lägg till
                 </button>
             </td>

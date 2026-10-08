@@ -21,6 +21,21 @@ tbody tr:hover {
     background-color: #e7e5e5;
 }
 
+/*Knapp*/
+.remove-button {
+    background-color: #810606;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #b41010;
+}
+
 .bold {
     font-weight: 800;
 }
