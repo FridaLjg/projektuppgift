@@ -1,41 +1,50 @@
-/*Sökruta*/
-#search {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Container */
+.container {
+    padding: 20px;
 }
 
-/*Välj ämne*/
-#subject {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+h2 {
+    text-align: center;
 }
 
 .filter-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 20px;
-}
-
-.filter-item {
-    display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-/*Tabell*/
-table {
+.bold {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Sökruta och dropdown */
+#search,
+#subject {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.course-count {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Tabell */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    min-width: 700px;
+    width: auto;
 }
 
 th,
@@ -51,17 +60,21 @@ th {
     cursor: pointer;
 }
 
+th:hover {
+    background-color: #630404;
+}
+
 tbody tr:hover {
     background-color: #e7e5e5;
 }
 
+/* Knapp */
 .add-button {
     background-color: #2e7d32;
     color: white;
     border: none;
-    border-radius: 10px;
-    padding: 8px 16px;
-    font-weight: 600;
+    border-radius: 6px;
+    padding: 8px 14px;
     cursor: pointer;
 }
 
@@ -69,13 +82,21 @@ tbody tr:hover {
     background-color: #3a9e3f;
 }
 
-.center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+/* Mediaquery för mindre skärmar */
+@media (max-width: 600px) {
 
-.bold {
-    font-weight: 800;
+    table {
+        min-width: 700px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    #search,
+    #subject {
+        max-width: 300px;
+    }
 }

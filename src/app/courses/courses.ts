@@ -66,7 +66,6 @@ export class Courses {
   }
 
   sortCourses(column: string): void {
-    console.log('Sorterar på:', column);
     this.sortColumn.set(column);
   }
 

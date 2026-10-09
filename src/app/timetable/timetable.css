@@ -1,8 +1,14 @@
 /*Tabell*/
-table {
+.table-wrapper {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    min-width: 700px;
+    width: auto;
 }
 
 th,
@@ -15,6 +21,11 @@ td {
 th {
     background-color: #810606;
     color: white;
+    cursor: pointer;
+}
+
+th:hover {
+    background-color: #630404;
 }
 
 tbody tr:hover {
@@ -30,6 +41,7 @@ tbody tr:hover {
     padding: 8px 16px;
     font-weight: 600;
     cursor: pointer;
+
 }
 
 .remove-button:hover {
@@ -38,4 +50,23 @@ tbody tr:hover {
 
 .bold {
     font-weight: 800;
+}
+
+/* Mediaquery för mindre skärmar */
+@media (max-width: 600px) {
+
+    table {
+        min-width: 700px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    #search,
+    #subject {
+        max-width: 300px;
+    }
 }

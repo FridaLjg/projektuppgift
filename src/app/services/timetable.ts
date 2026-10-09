@@ -19,6 +19,8 @@ export class TimetableService {
     }
   }
 
+
+  //Lägg till kurs
   addCourse(course: Course): void {
 
     const exists = this.courses().some(
@@ -38,6 +40,7 @@ export class TimetableService {
     }
   }
 
+  //Ta bort kurs
   removeCourse(courseCode: string): void {
     this.courses.update(courses =>
       courses.filter(course => course.courseCode !== courseCode)

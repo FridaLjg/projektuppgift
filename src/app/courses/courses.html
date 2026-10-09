@@ -1,4 +1,4 @@
-<div class="center-container">
+<div class="container">
     <h2>Kurser</h2>
 
     <div class="filter-container">
@@ -8,9 +8,11 @@
 
         <input type="text" id="search" placeholder="Sök efter kurs..."
             (input)="searchTerm.set($any($event.target).value)">
+    </div>
 
+    <div class="filter-container">
         <!--Filtrera efter ämne-->
-        <label for="subject" class="bold">Välj ämne:</label>
+        <label for="subject">Välj ämne:</label>
 
         <select id="subject" (change)="selectSubject.set($any($event.target).value)">
             <option value="">Alla ämnen</option>
@@ -24,38 +26,40 @@
     <p class="course-count">
         Listar {{ filteredCourses().length }} av totalt {{ courses().length }}
     </p>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th (click)="sortCourses('courseCode')">Kurskod</th>
+                    <th (click)="sortCourses('courseName')">Kursnamn</th>
+                    <th (click)="sortCourses('points')">Poäng</th>
+                    <th (click)="sortCourses('subject')">Ämne</th>
+                    <th>Kursplan</th>
+                    <th>Lägg till</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (course of filteredCourses(); track $index) {
+                <tr>
+                    <td>{{ course.courseCode }}</td>
+                    <td>{{ course.courseName }}</td>
+                    <td>{{ course.points }} hp</td>
+                    <td>{{ course.subject }}</td>
+                    <td>
+                        <a [href]="course.syllabus" target="_blank" rel="noopener noreferrer">
+                            Kursplan
+                        </a>
+                    </td>
+                    <td>
+                        <button type="button" class="add-button" (click)="addToTimetable(course)">
+                            Lägg till
+                        </button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<table>
-    <thead>
-        <tr>
-            <th (click)="sortCourses('courseCode')">Kurskod</th>
-            <th (click)="sortCourses('courseName')">Kursnamn</th>
-            <th (click)="sortCourses('points')">Poäng</th>
-            <th (click)="sortCourses('subject')">Ämne</th>
-            <th>Kursplan</th>
-            <th>Lägg till</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @for (course of filteredCourses(); track $index) {
-        <tr>
-            <td>{{ course.courseCode }}</td>
-            <td>{{ course.courseName }}</td>
-            <td>{{ course.points }} hp</td>
-            <td>{{ course.subject }}</td>
-            <td>
-                <a [href]="course.syllabus" target="_blank" rel="noopener noreferrer">
-                    Kursplan
-                </a>
-            </td>
-            <td>
-                <button type="button" class="add-button" (click)="addToTimetable(course)">
-                    Lägg till
-                </button>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
