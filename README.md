@@ -2,6 +2,9 @@
 
 ## Av: Frida Ljungberg, 2026.
 
+## Länk till applikation
+https://projektarbetedt208g.netlify.app/ 
+
 ### Om
 Syftet med denna projektuppgift är att skapa en applikation där användaren kan söka efter kurser och lägga till dessa i ett personligt ramschema.
 
