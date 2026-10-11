@@ -1,6 +1,7 @@
 # Projektuppgift - DT208G
 
 ## Av: Frida Ljungberg, 2026.
+Jag har satsat på grundkraven för uppgiften.
 
 ## Länk till applikation
 https://projektarbetedt208g.netlify.app/ 
