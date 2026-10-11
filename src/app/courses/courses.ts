@@ -43,7 +43,7 @@ export class Courses {
           return valueA - valueB;
         }
 
-        return String(valueA).localeCompare(String(valueB), 'sv');
+        return String(valueA).localeCompare(String(valueB));
       });
     }
 

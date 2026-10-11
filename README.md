@@ -1,59 +1,20 @@
-# Projektuppgift
+# Projektuppgift - DT208G
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+## Av: Frida Ljungberg, 2026.
 
-## Development server
+### Om
+Syftet med denna projektuppgift är att skapa en applikation där användaren kan söka efter kurser och lägga till dessa i ett personligt ramschema.
 
-To start a local development server, run:
+Applikationen är byggd med TypeScript tillsammans med ramverket Angular. 
+Kursinformation hämtas från en extern JSON-fil och presenteras i en tabell i komponenten "Courses".
 
-```bash
-ng serve
-```
+I applikationen kan användaren söka, filtrera och sortera kurserna i tabellen. Användaren kan lägga till kurser i sitt personliga ramschema.
+I ramschemat ser användaren kursernas sammanlagda poäng. Ramshcemat sparas i localStorage. Användaren kan också ta bort kurser i sitt ramschema.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Tekniker
+- TypeScript
+- Angular
+- Routing
+- HttpClient
+- Signals
+- localStorage
